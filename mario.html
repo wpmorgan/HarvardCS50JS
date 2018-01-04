@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script type="text/javascript">
+
+//variables
+let pyramid = prompt("input integer")
+let pyramidHeight = parseInt(pyramid) + 2;
+const hashTag = "#";
+const space = "&nbsp;&nbsp;";
+
+//check user input
+if (pyramidHeight < 0 || pyramidHeight > 23) {
+   pyramidHeight = prompt("input integer, dummy.");
+};
+
+//draw the pyramid
+for (i = 2; i < pyramidHeight; i++) {
+    document.write(space.repeat((pyramidHeight - i))); 
+    document.write(hashTag.repeat(i));
+    document.write("<br>");
+}
+
+
+</script>
+    
+</body>
+</html>
