@@ -13,11 +13,12 @@ const hashTag = "#";
 const space = "&nbsp;&nbsp;";
 
 //check user input
-do {
-   pyramidHeight = prompt("Input integers between 0 and 23 only please.");
-} while (pyramidHeight < 0 || pyramidHeight > 23 /*|| typeof pyramid !== 'number'*/);
 
-document.write(pyramidHeight);
+while (pyramidHeight < 0 || pyramidHeight > 23 || typeof pyramid !== 'number'){
+    pyramidHeight = prompt("Input integers between 0 and 23 only please.");
+}
+
+
 
 //draw the pyramid
 for (i = 2; i < pyramidHeight; i++) {
