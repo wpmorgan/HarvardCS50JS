@@ -6,26 +6,18 @@
 
 <script type="text/javascript">
 
-//constants
+//variables
 const hashMark = "#";
 const space = "&nbsp;&nbsp;";
+let userInput;
 
 
-//get user input (OLD)
-let userInput = parseInt(window.prompt("Please input an integer between 0 and 23."));
-
-
-while (userInput < 0 || userInput > 23 || Number.isInteger(userInput) == false) {
-    let userInput = parseInt(window.prompt("Please input an integer between 0 and 23."));
-};
-
-/*
-//get user input (NEW)
+//get user input
 do {
-    let userInput = parseInt(window.prompt("Please input an integer between 0 and 23."));
+    userInput = parseInt(window.prompt("Please input an integer between 0 and 23."));
 }
 while (userInput < 0 || userInput > 23 || Number.isInteger(userInput) == false);
-*/
+
 
 // adjust to make two hashmarks on the top row
 let pyramidHeight = userInput + 2;
