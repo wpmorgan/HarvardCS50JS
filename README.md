@@ -1,4 +1,4 @@
-# mario-pyramid
+# Harvard CS50 exercises
 Take user input as the height of a half-pyramid (right-justified).
 Input must be greater than zero and less that 24, inclusive.
 
