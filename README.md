@@ -1,4 +1,4 @@
-# Harvard CS50 exercises
+# Harvard CS50 Exercises in JavaScript
 This is my repository for exercises taken from the Harvard CS50 Course. 
 Since I am learning JavaScript I am adapting the exercises somewhat. 
 
