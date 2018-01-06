@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+<title>Making Change</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    
+
+    // variables
+let userInput;
+let coinCount = 0;
+let quarter = 25;
+let quarterCount = 0;
+let dime = 10;
+let dimeCount = 0;
+let nickel = 5;
+let nickelCount = 0;
+let penny = 1;
+let pennyCount = 0;
+
+
+
+
+// get user input and change to number of pennies
+do {
+    userInput = parseFloat(window.prompt("Please input amount of change in dollars.", "0.69"));
+    console.log(userInput);
+}
+while (userInput < 0 );
+
+let totalInPennies = userInput * 100; 
+
+//confirm inputs
+document.write("Change needed: " + Number(userInput).toFixed(2) + "<br>");
+
+
+
+// find the number of coins required to make change
+
+while (totalInPennies >= quarter) {
+    coinCount ++;
+    quarterCount ++;
+    totalInPennies -= quarter;
+}
+
+while (totalInPennies >= dime) {
+    coinCount ++;
+    dimeCount ++;
+    totalInPennies -= dime;
+}
+
+while (totalInPennies >= nickel) {
+    coinCount ++;
+    nickelCount ++;
+    totalInPennies -= nickel;
+}
+
+while (totalInPennies >= penny) {
+    coinCount ++;
+    pennyCount ++;
+    totalInPennies -= penny;
+}
+
+
+
+// print results
+document.write("Total number of coins required: " + coinCount + "<br>");
+document.write("Number of quarters: " + quarterCount + "<br>");
+document.write("Number of dimes: " + dimeCount + "<br>");
+document.write("Number of nickels: " + nickelCount + "<br>");
+document.write("Number of pennies: " + pennyCount + "<br>");
+
+
+    </script>
+</body>
+</html>
