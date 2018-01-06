@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script type="text/javascript">
+
+//constants
+const hashMark = "#";
+const space = "&nbsp;&nbsp;";
+
+
+//get user input (OLD)
+let userInput = parseInt(window.prompt("Please input an integer between 0 and 23."));
+
+
+while (userInput < 0 || userInput > 23 || Number.isInteger(userInput) == false) {
+    let userInput = parseInt(window.prompt("Please input an integer between 0 and 23."));
+};
+
+/*
+//get user input (NEW)
+do {
+    let userInput = parseInt(window.prompt("Please input an integer between 0 and 23."));
+}
+while (userInput < 0 || userInput > 23 || Number.isInteger(userInput) == false);
+*/
+
+// adjust to make two hashmarks on the top row
+let pyramidHeight = userInput + 2;
+
+//draw the pyramid
+for (i = 2; i < pyramidHeight; i++) {
+    document.write(space.repeat(pyramidHeight - i)); 
+    document.write(hashMark.repeat(i));
+    document.write("<br>");
+}
+
+
+</script>
+    
+</body>
+</html>
