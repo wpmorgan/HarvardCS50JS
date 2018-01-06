@@ -29,7 +29,8 @@ do {
 }
 while (userInput < 0 );
 
-let totalInPennies = userInput * 100; 
+let totalInPennies = Math.round(userInput * 100);
+
 
 //confirm inputs
 document.write("Change needed: " + Number(userInput).toFixed(2) + "<br>");
@@ -37,7 +38,6 @@ document.write("Change needed: " + Number(userInput).toFixed(2) + "<br>");
 
 
 // find the number of coins required to make change
-
 while (totalInPennies >= quarter) {
     coinCount ++;
     quarterCount ++;
