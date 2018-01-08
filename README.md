@@ -9,3 +9,7 @@ Input must be greater than zero and less that 24, inclusive.
 2. Change Maker - 
 Determines the smallest amount of coins necessary to make change. 
 The change is set to user input. 
+
+3. Credit -
+Determines whether a credit card number is valid, and what type of card it is. 
+Only works for Amex, MasterCard, and Visa. 
