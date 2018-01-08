@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <script type="text/javascript">
+    
+// URL of the assignment: https://docs.cs50.net/problems/credit/credit.html 
+// URL for fake credit card numbers to input: https://developer.paypal.com/docs/classic/payflow/payflow-pro/payflow-pro-testing/#credit-card-numbers-for-testing
+
+
+//variables
+let userInput = window.prompt("Please insert your credit card number.", "4111111111111111");
+let length = userInput.length;
+let sumOne = 0;
+let sumTwo = 0;
+let cardName = "N/A";
+let cardIsValid = "";
+let firstDigit = userInput.slice(0, 1);
+let firstTwoDigits = userInput.slice(0, 2);
+
+
+//determine if card is valid, and what type it is.
+
+//retrieve, multiply by two, and add together every other number starting from second last
+for (i = userInput.length - 2 ; i >= 0; i -= 2){
+    sumOne += ((parseInt(userInput[i]) * 2) % 10);
+    sumOne += (Math.floor(((parseInt(userInput[i]) * 2) % 100) / 10));
+};
+
+//retrieve and add remaining numbers
+for (i = userInput.length - 1 ; i >= 0; i -= 2){
+    sumTwo += (parseInt(userInput[i]));
+};
+
+//if the above sums combined % 10 = 0, then card is valid
+if ((sumOne + sumTwo) %10 == 0){
+    cardIsValid = "Card is valid";
+} else {
+    cardIsValid = "NOT A VALID CARD";
+}
+
+//sort credit card types
+if ((length == 15) && (firstTwoDigits == "34") || (firstTwoDigits == "37")){
+    cardName = "Amex";
+    //I feel like there should be a better way to do the next expression. Any suggestions?
+} else if ((length == 16) && (firstTwoDigits == "51") || (firstTwoDigits == "52") || (firstTwoDigits == "53") || (firstTwoDigits == "54") || (firstTwoDigits == "55")){
+    cardName = "MasterCard";
+} else if (((length == 13) || (length == 16)) && (firstDigit == "4")){
+    cardName = "Visa";
+};
+
+
+//print results
+document.write("Results: <br>");
+document.write("User input: " + userInput + "<br>");
+//document.write("Length: " + length + "<br>");
+//document.write("Integer form: " + ccNumber + "<br>");
+//document.write("First two digits: " + userInput.slice(0, 2) + "<br>");
+document.write("Type of card: " + cardName + "<br>");
+//document.write("sumOne: " + sumOne + "<br>");
+//document.write("sumTwo: " + sumTwo + "<br>");
+//document.write("sumOne plus sumTwo: " + (parseInt(sumOne) + parseInt(sumTwo)) + "<br>");
+document.write(cardIsValid + "<br>");
+
+
+
+
+    </script>
+</body>
