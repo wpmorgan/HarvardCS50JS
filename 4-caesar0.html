@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <script type="text/javascript">
+    
+
+
+function cipher(key, userInput) {
+    var userInput = window.prompt("Enter a message to be encrypted."); // get message to be enciphered from user
+    var key = parseInt(window.prompt("Enter a key."));  // number of places to shift the characters from user
+    var secretMessage = "";
+    for (i = 0; i <= userInput.length - 1; i++){
+        if ((userInput.charCodeAt(i) >= 97) && userInput.charCodeAt(i) <= 122) {
+            secretMessage += String.fromCharCode(((userInput.charCodeAt(i) - 97) + key) % 26 + 97);
+        } else if ((userInput.charCodeAt(i)>= 65) && userInput.charCodeAt(i) <= 90) {
+            secretMessage += String.fromCharCode(((userInput.charCodeAt(i) - 65) + key) % 26 + 65)
+        } else {
+            secretMessage += userInput[i];
+        }
+
+    }
+    document.write(secretMessage);
+}
+    
+    cipher();
+    
+    </script>
+</body>
