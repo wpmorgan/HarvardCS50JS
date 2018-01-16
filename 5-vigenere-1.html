@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+function cipherTwo() {
+
+//loop through input and adjust the parts just like in caesar
+//but this time the amount shifted will come from the array above depending on the place
+//it'll add one to the key place every loop
+var userInput = "aaa B" //window.prompt("Enter a message to be encrypted."); // get message to be enciphered from user
+var encipherKey = "abc" //parseInt(window.prompt("Enter a key."));  // number of places to shift the characters from user
+
+
+// make variable to keep track of where in the array the current letter being enciphered is
+let keyCounter = 0
+let keyPosition = keyCounter % encipherKey.length;
+
+
+
+// if the key position exceeds the length, reset to zero to go through it again
+console.log("first key position: " + keyPosition);
+    
+let encipheredMessage = "";
+    
+for (i = 0, j= 0; i <= userInput.length - 1; i++){
+    if ((userInput.charCodeAt(i) >= 97) && userInput.charCodeAt(i) <= 122) {
+        encipheredMessage += String.fromCharCode(((userInput.charCodeAt(i) - 97) + (encipherKey.charCodeAt(j % encipherKey.length) - 97)) % 26 + 97);
+        j++;
+        console.log(keyPosition);
+    } else if ((userInput.charCodeAt(i)>= 65) && userInput.charCodeAt(i) <= 90) {
+        encipheredMessage += String.fromCharCode(((userInput.charCodeAt(i) - 65) + (encipherKey.charCodeAt(j % encipherKey.length) - 65)) % 26 + 65);
+        j++;
+    } else {
+        encipheredMessage += userInput[i];
+    };
+        
+    }
+
+
+console.log(encipheredMessage);
+console.log(encipherKey.length);
+
+
+
+
+}
+
+cipherTwo();
+
+
+
+
+
+
+
+
+</script>
+</body>
