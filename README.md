@@ -17,3 +17,8 @@ Only works for Amex, MasterCard, and Visa.
 4. Caesar - 
 Enciphers a message input by the user by shifting the character code according to the second user input. 
 Capital / lower-case and punctuation are not changed.
+
+5. Vigenere - 
+Enciphers a message input by the user by shifting the character code according the user input from a second prompt.
+The second prompt asks for alphabetic input and shifts each character of the message according to the 
+code of characters in the second prompt in order.
