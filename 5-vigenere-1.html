@@ -1,3 +1,9 @@
+// instructions for this exercise can be found at:
+// https://docs.cs50.net/2017/fall/psets/2/vigenere/vigenere.html
+
+
+
+
 <!DOCTYPE html>
 <head>
 
@@ -7,13 +13,13 @@
 <script type="text/javascript">
 
 
-function cipherTwo() {
+function cipherTwo(userInput, encipherKey) {
 
 //loop through input and adjust the parts just like in caesar
 //but this time the amount shifted will come from the array above depending on the place
 //it'll add one to the key place every loop
-var userInput = "aaa B" //window.prompt("Enter a message to be encrypted."); // get message to be enciphered from user
-var encipherKey = "abc" //parseInt(window.prompt("Enter a key."));  // number of places to shift the characters from user
+userInput = "aaa B" //window.prompt("Enter a message to be encrypted."); // get message to be enciphered from user
+encipherKey = "abc" //parseInt(window.prompt("Enter a key."));  // number of places to shift the characters from user
 
 
 // make variable to keep track of where in the array the current letter being enciphered is
