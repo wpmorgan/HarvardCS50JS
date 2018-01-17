@@ -1,8 +1,5 @@
 // instructions for this exercise can be found at:
-// https://docs.cs50.net/2017/fall/psets/2/vigenere/vigenere.html
-
-
-
+// https://docs.cs50.net/2017/fall/psets/2/vigenere/vigenere.html <br> <br> <br>
 
 <!DOCTYPE html>
 <head>
@@ -12,50 +9,35 @@
 
 <script type="text/javascript">
 
-
+// prompt for message to be enciphered. Prompt again for an alphabetic string to use as a cipher key.
 function cipherTwo(userInput, encipherKey) {
-
-//loop through input and adjust the parts just like in caesar
-//but this time the amount shifted will come from the array above depending on the place
-//it'll add one to the key place every loop
-
-
 userInput = window.prompt("Please write a message to be enciphered.", "AAA aaa MMM mmm abcdef"); 
-encipherKey = window.prompt("Please insert an alphabetic key.", "abc");
-    
+encipherKey = window.prompt("Please insert an alphabet-only key.", "abc");
 let encipheredMessage = "";
-    
+
+// change alphabetic key input to lower case for uniformity
+let key = encipherKey.toLowerCase();
+
+// Loop through input.
+// Shift character codes of each index according to the shift amount determined by the key.  
+// Preserve upper and lower cases. Pass over spaces and punctuation.   
 for (i = 0, j= 0; i <= userInput.length - 1; i++){
     if ((userInput.charCodeAt(i) >= 97) && userInput.charCodeAt(i) <= 122) {
-        encipheredMessage += String.fromCharCode(((userInput.charCodeAt(i) - 97) + (encipherKey.charCodeAt(j % encipherKey.length) - 97)) % 26 + 97);
+        encipheredMessage += String.fromCharCode(((userInput.charCodeAt(i) - 97) + (key.charCodeAt(j % encipherKey.length) - 97)) % 26 + 97);
         j++;
     } else if ((userInput.charCodeAt(i) >= 65) && userInput.charCodeAt(i) <= 90) {
-        encipheredMessage += String.fromCharCode(((userInput.charCodeAt(i) - 65) + (encipherKey.charCodeAt(j % encipherKey.length) - 65)) % 26 + 59);
+        encipheredMessage += String.fromCharCode(((userInput.charCodeAt(i) - 65) + (key.charCodeAt(j % encipherKey.length) - 97)) % 26 + 65);
         j++;
     } else {
         encipheredMessage += userInput[i];
-    };
-        
+    };   
     }
 
-
-console.log(encipheredMessage);
-
-
-
-
-
-
+// Print enciphered message.
+document.write("Enciphered message: " + encipheredMessage);
 }
 
 cipherTwo();
-
-
-
-
-
-
-
 
 </script>
 </body>
