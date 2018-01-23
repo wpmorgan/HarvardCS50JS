@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+// https://docs.cs50.net/problems/find/less/find.html
+// CS50 PSET3 "search" 
+
+let target;
+
+// Get and store guess from user.
+do {target = parseInt(window.prompt("I will generate 5 random numbers between 1 and 20. Try to guess one!", "10"));
+} while (Number.isInteger(target) == false);
+
+let numberList = [];
+let nextNumber = 0;
+
+// Generate an array of 5 numbers between 1 and 10 with no duplicates. 
+for (i = 0; i < 5; i++){
+    do {nextNumber = Math.floor(Math.random() * 20) + 1;
+    } while (numberList.includes(nextNumber));
+    numberList[i] = nextNumber;
+}
+
+// Print the guess and the array.
+document.write("Your Guess: " + target + "<br>");
+document.write("Random Number List: " + numberList + "<br>");
+
+// Print results of the guess.
+if (numberList.includes(target)){
+    document.write("You got it!")
+} else {
+    document.write("Sorry, you didn't get it.")
+}
+
+
+
+
+
+</script>
+</body>
+</html>
