@@ -22,3 +22,7 @@ Capital / lower-case and punctuation are not changed.
 Enciphers a message input by the user by shifting the character code according the user input from a second prompt.
 The second prompt asks for alphabetic input and shifts each character of the message according to the 
 code of characters in the second prompt in order.
+
+6. Search - 
+Takes input from the user (guess) and checks a randomly generated array of 5 number to see if it's included.
+
