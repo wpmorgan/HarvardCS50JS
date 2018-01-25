@@ -26,3 +26,5 @@ code of characters in the second prompt in order.
 6. Search - 
 Takes input from the user (guess) and checks a randomly generated array of 5 number to see if it's included.
 
+7. Sort - 
+Sorts a randomly generated array with bubble sort. 
