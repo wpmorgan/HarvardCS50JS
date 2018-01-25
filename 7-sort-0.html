@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+// https://docs.cs50.net/problems/find/less/find.html
+// CS50 PSET3 "sort" 
+
+
+let numberList = [];
+let nextNumber = 0;
+let tmp;
+let swapNumber = 0;
+
+// Generate an array of numbers without duplicates
+for (i = 0; i < 10; i++){
+    do {nextNumber = Math.floor(Math.random() * 20) + 1;
+    } while (numberList.includes(nextNumber));
+    numberList[i] = nextNumber;
+}
+
+document.write("Original order: " + numberList + "<br>");
+
+
+// use bubble sort algorithym on the array
+function bubbleSort(a){ 
+    var swapped;
+    do {
+        swapped = false;
+        for (i = 0; i <= a.length - 1; i++){
+            if (a[i] > a[i + 1]) {
+                tmp = a[i];
+                a[i] = a[i + 1];
+                a[i + 1] = tmp;
+                swapped = true;
+                swapNumber ++; //count swaps
+            }
+        }
+    } while (swapped);
+}
+
+bubbleSort(numberList);
+
+// display results
+document.write("Sorted list: " + numberList + "<br>");
+document.write("Number of swaps required: " + swapNumber);
+
+
+
+
+</script>
+</body>
+</html>
