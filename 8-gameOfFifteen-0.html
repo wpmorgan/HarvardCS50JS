@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Game of Fifteen</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+var grid = [];
+let gameWon = false;
+let boardLayout = [];
+
+// make 2d 3x3 array
+for (i = 0; i < 3; i++){
+    grid[i] = [];
+    for (j = 0; j < 3; j ++){
+        grid[i][j] = j;
+    }
+}
+
+
+
+
+
+
+// Populate and draw the board
+function drawBoard(){
+var startingNumber = 8;
+for (i = 0; i < 3; i++){
+    for (j = 0; j < 3; j ++){
+        grid[i][j] = startingNumber;
+       if (grid[i][j] == 0){
+           //grid[i][j] = 95;
+           document.write("_");
+       } else {
+       document.write(grid[i][j] + "    ");
+       }
+       startingNumber-- ;
+    }
+    document.write("<br>");
+}
+
+}
+
+
+
+
+
+
+
+
+// Move - 
+function move(tile) {
+    // get tile from user
+    var row;
+    var column;
+    var tmp;
+    var d = 2;
+
+
+    for (row = 0; row <= d; row++){
+
+        for (column = 0; column <= d; column++){
+
+            if (grid[row][column] == tile){
+
+                console.log(row, column);
+
+
+// swap the _ and the 3
+
+                if ((row + 1) <= d && grid[row + 1][column] == 0){
+
+                    console.log(row + 1, column);
+
+                   console.log("hello");
+
+                   grid[row + 1][column] = grid[row][column];
+
+                   grid[row][column] = 25; // won't make 2,2 into 25...?
+    
+                   /*
+                   tmp = grid[row + 1][column]; //store 95 in tmp
+                   grid[row + 1][column] = grid[row][column]; // store input in old 95 spot
+                   grid[row][column] = tmp; // put 95 into input spot
+                   */
+                }
+            }
+        }
+    }
+}
+
+
+
+// Won - check to see if numbers are in descending order
+
+drawBoard();
+move(3);
+drawBoard();
+
+
+
+
+</script>
+
+</body>
+</html>
