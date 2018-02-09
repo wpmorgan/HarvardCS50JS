@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Game of Fifteen 1</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+
+var grid = [];
+var startingNumber = 8;
+var won = false;
+
+
+
+
+// INITIALIZE
+function init(){
+    for (i = 0; i < 3; i++){
+        grid[i] = [];
+        for (j = 0; j < 3; j++){
+            grid[i][j] = startingNumber--;
+        }
+    }
+console.log(grid);
+}
+
+
+
+
+
+
+
+// DRAW THE BOARD
+function draw(){
+    for (i = 0; i < 3; i++){
+        document.write("<br>");
+        for (j = 0; j < 3; j++){
+            if (grid[i][j] == 0){
+                document.write("_");
+            } else {
+                document.write(grid[i][j] + "  ");
+            }
+        }
+    }
+document.write("<br>");
+}
+
+
+
+
+
+
+
+
+
+
+// MOVE FUNCTION
+function move(tile){
+
+        for (i = 0; i < 3; i++){
+            for (j = 0; j < 3; j++){
+            if (grid[i][j] == tile) {
+                var row = i;
+                var column = j;
+            }
+        }
+    if ((row + 1 < 3) && grid[row + 1][column] == 0) {
+        grid[row + 1][column] = tile;
+        grid[row][column] = 0;
+    } else if ((row - 1 >= 0) && grid[row - 1][column] == 0) {
+        grid[row - 1][column] = tile;
+        grid[row][column] = 0;
+    } else if ((column + 1 < 3) && grid[row][column + 1] == 0) {
+        grid[row][column + 1] = tile;
+        grid[row][column] = 0;
+    } else if ((column - 1 >= 0) && grid[row][column - 1] == 0) {
+        grid[row][column - 1] = tile;
+        grid[row][column] = 0;
+    }
+}
+}
+
+
+
+
+// CHECK IF GAME IS WON
+function won(){
+
+}
+
+
+init();
+draw();
+move(3);
+draw();
+
+
+
+</script>
+
+</body>
+</html>
